@@ -1,3 +1,25 @@
 These are the final files as used on the course. 
 
+https://minikube.sigs.k8s.io/
 
+## Install minikube
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64 \
+  && sudo install minikube /usr/local/bin/minikube
+
+$ minikube start --vm-driver=virtualbox
+$ minikube config set vm-driver virtualbox
+$ minikube config set memory 4096
+
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.3.1/minikube-darwin-amd64 &&\
+      rm /usr/local/bin/minikube &&\
+      chmod +x minikube &&\
+      sudo mv minikube /usr/local/bin/
+
+## issues the Cisco AnyConnect VPN client.
+$ sudo route add 192.168.99.0/24 -iface vboxnet3
+
+$ kubectl config get-contexts
+$ kubectl config use-context CONTEXT_NAME
+
+$ minikube docker-env
+$ eval $(minikube docker-env)
