@@ -8,7 +8,11 @@ $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/mini
 
 $ minikube start --vm-driver=virtualbox
 $ minikube config set vm-driver virtualbox
+$ minikube config set memory 3072
 $ minikube config set memory 4096
+
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.3.1/minikube-darwin-amd64 \
+  && sudo install minikube /usr/local/bin/minikube
 
 $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.3.1/minikube-darwin-amd64 &&\
       rm /usr/local/bin/minikube &&\

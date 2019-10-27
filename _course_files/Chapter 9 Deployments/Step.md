@@ -18,3 +18,21 @@ $ kubectl describe svc
 
 ## Test delete pod to see  replicaSet
 $ kubectl delete po --all
+
+## Deploy different version
+```
+pods.yaml
+minReadySeconds: 30
+```
+## Rollouts
+change image: richardchesterwood/k8s-fleetman-webapp-angular:release0
+$ kubectl rollout status webapp
+$ kubectl rollout status deploy webapp
+$ kubectl rollout history deploy webapp
+$ kubectl rollout undo deploy webapp --to-revision=7
+$ kubectl rollout undo deploy webapp
+
+## Error docker images
+image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
+$ kubectl apply -f pods.yaml
+$ kubectl describe pod webapp-7c7cd8cd7-8zmmt
