@@ -7,3 +7,7 @@ A new version of "Fleetman", my thrilling example microservice architecture.
 This version targets Kubernetes as the orchestration system. We're going to use k8s features to achieve this, whilst simplifying the implementation. Only Hystrix and Feign from NetflixOSS are used.
 
 I'm using the issue tracker to manage the project, check the "Releases" project for progress.
+
+# Bearer Token
+# For Bash:
+$ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')

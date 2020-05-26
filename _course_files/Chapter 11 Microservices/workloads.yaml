@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -102,5 +101,3 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
-
-        

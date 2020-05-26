@@ -1,7 +1,6 @@
-$ kubectl apply -f storage.yaml
-$ kubectl apply -f mongo-stack.yaml
-$ kubectl apply -f services.yaml
-$ kubectl apply -f workloads.yaml
+$ kubectl apply -f elastic-stack.yaml
+$ kubectl apply -f fluentd-config.yaml
+
 $ kubectl delete -f .
 
 ## Extend minikube

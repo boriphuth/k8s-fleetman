@@ -63,3 +63,14 @@ $ kubectl apply -f grafana/grafana_deploy.yaml
 $ kubectl apply -f grafana/grafana_node_exporter.yaml 
 
 $ kubectl config view --minify --raw --output 'jsonpath={..cluster.certificate-authority-data}' | base64 -D | openssl x509 -text -out -
+
+## Kubernetes Setup for Prometheus and Grafana
+kubectl delete namespace monitoring
+kubectl apply -f manifests-all.yaml
+kubectl get all -n monitoring
+
+## Default Dashboards
+kubectl --namespace monitoring delete job grafana-import-dashboards
+kubectl apply -f grafana/import-dashboards/job.yaml
+kubectl port-forward --namespace monitoring service/grafana 3000:3000
+

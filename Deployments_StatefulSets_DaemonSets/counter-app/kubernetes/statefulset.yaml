@@ -24,7 +24,7 @@ spec:
       name: counter
     spec:
       accessModes: [ "ReadWriteMany" ]
-      storageClassName: efs
+      storageClassName:  managed-nfs-storage
       resources:
         requests:
           storage: 50Mi

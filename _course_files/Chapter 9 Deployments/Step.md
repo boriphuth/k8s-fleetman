@@ -32,6 +32,9 @@ $ kubectl rollout history deploy webapp
 $ kubectl rollout undo deploy webapp --to-revision=7
 $ kubectl rollout undo deploy webapp
 
+$ kubectl rollout history deploy webapp
+$ kubectl rollout undo deploy webapp --to-revision=1
+
 ## Error docker images
 image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
 $ kubectl apply -f pods.yaml
